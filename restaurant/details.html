@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="website-title">Restaurants Near Me</title>
+
+  <!--Bootstrap JS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!--Leaflet CSS and Javascript file-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
+  <!-- Internal Stylesheet -->
+  <style>
+    .zero-bottom-margin{
+      margin-bottom:0px;
+    }
+    button.search-button {
+      background-color: #ed3447;
+      color: white;
+      border-radius: 15px;
+    }
+    nav {
+      background-color: tomato;
+      color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18), 0 6px 20px 0 rgba(0, 0, 0, 0.16);
+    }
+    .nav-button {
+      color: white;
+    }
+
+    .nav-footer-bg-colors{
+      background-color: tomato;
+      color: white;
+      padding: 4px;
+    }
+    input.form-control {
+      border-radius: 15px;
+    }
+    /* Body and .content ensures that the footer always stays at the bottom */
+    body{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    div.container{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18), 0 6px 20px 0 rgba(0, 0, 0, 0.16);
+    }
+    div.rounded {
+      border-radius: 40px;
+    }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content; center;
+    }
+    a:hover {
+      color: #FFFFFF;
+    }
+    .col {
+      padding: 15px;
+    }
+    .city {
+      background-color: tomato;
+      color: white;
+      padding: 6px;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18), 0 6px 20px 0 rgba(0, 0, 0, 0.16);
+    }
+    #map {
+      height: 250px;
+      width: 400px;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+
+<body>
+  <!-- ************************** Navbar ********************************-->
+  <nav id="main-nav-bar" class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="nav-button navbar-brand" href="index.html">Restaurant Finder Service</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="nav-button" data-toggle="dropdown">Restaurants<span class="caret"></span></a>
+            <ul id="bulk" class="dropdown-menu">
+              <li><a>New</a></li>
+              <li><a>Popular</a></li>
+              <li><a>Buffets</a></li>
+              <li><a>Burgers</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Cuisines</li>
+              <li><a>Italian</a></li>
+              <li><a>Mexican</a></li>
+              <li><a>Chinese</a></li>
+              <li><a>Korean</a></li>
+              <li><a>Japanese</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form id="search-form" class="navbar-form navbar-left" method="post" action="results.html">
+            <input id="form-text" name="search-query" class="form-control" onkeypress="detectEnterKey(event)" type="text" size="25" placeholder="Search for more restaurants!">
+            <button onclick="submitSearchForm()" id="submit-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Search</button>
+          </form>
+          <li>
+            <a class="nav-button" href="https://github.com/danielbrod01">
+            <span class="glyphicon glyphicon-user"></span> GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Helper functions to store user input for api query -->
+      <script src="components/keywords.js"></script>
+
+  <!-- Grab business details and call api -->
+      <script src="components/map_api_calls.js"></script>
+      <script src="components/business_template.js"></script>
+      <script src="components/api_calls.js"></script>
+      <script>getBusinessDetails()</script>
+
+      <!-- Fill these divs with elements based on the details results -->
+      <div class="container flex-container mb-3 bg-light rounded border"
+        <div id="image-row" class="row"></div>
+      </div>
+      <div class="container text-center mb-3 bg-light rounded border">
+        <div id="business-title">
+          <h1 id="business-name" class="city">Retrieving details...</h1>
+        </div>
+      </div>
+        <div class="container mb-3 bg-light rounded border">
+          <div id="business-details""></div>
+        </div>
+      <hr class="result-divider">
+
+  <!-- **************************** Footer ****************************** -->
+  <footer class="footer nav-footer-bg-colors pt-2 pd-2">
+    <div class="container text-center">
+      <span class="text-white">Data provided for free by Yelp Fusion API</span>
+    </div>
+  </footer>
+
+
+  </body>
+
+</head>
