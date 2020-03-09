@@ -25,11 +25,11 @@ This web application functions as an information service to good restaurants nea
 ## Important to note
 **It is recommended for users to accept the prompted HTML5 geolocation access on their screen for better user experience. Due to how Yelp API endpoints work, I am required to provide location coordinates regardless. If the user blocks geolocation access, results are default to businesses near San Francisco, CA.**
 
-With Geolocation: 
+*With Geolocation:*
 
 ![](acceptlocation.gif)
 
-Without Geolocation:
+*Without Geolocation:*
 
 ![](blocklocation.gif)
 
@@ -49,7 +49,7 @@ Users get more freedom to search using broad or narrow terms, for example "food"
 
 ![](keyword-search.gif)
 
-Navigate through results:
+*Navigate through results:*
 
 ![](buttons.gif)
 
