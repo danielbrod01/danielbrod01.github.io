@@ -27,11 +27,11 @@ This web application functions as an information service to good restaurants nea
 
 With Geolocation: 
 
-![](acceptlocation.gif)
+
 
 Without Geolocation:
 
-![](blocklocation.gif)
+
 
 ## Features
 * #### Default search
