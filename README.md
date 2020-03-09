@@ -23,3 +23,9 @@ This web application functions as an information service to good restaurants nea
 
 # Build
 #### Features
+##### Preset categories and cuisines search
+* Users can select given preset options on the navigation bar to get them started on some search terms. 
+
+![](
+
+The list of search results was compiled by calling the Yelp Fusion API based on their 'keyword terms'. As such, hard coding was not an issue, but rather templates were provided for data to fill in.
