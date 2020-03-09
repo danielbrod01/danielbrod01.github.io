@@ -57,7 +57,8 @@ function getBusinesses() {
     ${data.businesses.length} result(s): <span class="text-danger">Default location in San Francisco, CA</span>`;
 
     //for every business result in businesses data, create a new row html element display
-    document.getElementById("result-list").innerHTML = `${data.businesses.map(businessResultsTemplate).join('')}`;
+    document.getElementById("result-list").innerHTML = `${data.businesses.map(businessResultsTemplate).join('')}` +
+      `<hr class="result-divider">` + fixOffsetButtons() + `<hr class="result-divider">`;
   });
 }
 

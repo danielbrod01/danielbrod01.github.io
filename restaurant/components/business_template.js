@@ -15,7 +15,7 @@ function businessResultsTemplate(business) {
 
     <!-- display the business status (shop open or closed) and the distance from user location to business destination -->
               <h5 id="business-status">
-                ${(business.is_closed) ? `<span class="text-danger">Closed</span>` : `<span class="text-success">Open</span>`} -
+                ${(business.is_closed) ? `<span class="text-danger">Permanently Closed</span>` : `<span class="text-success">In business</span>`} -
                 <span class="text-muted">${metersToMilesFixed(business.distance)} mi</span><span class="glyphicon glyphicon-map-marker"></span>
               </h5>
 
@@ -59,7 +59,7 @@ function businessDetailsTemplate(details) {
 
       <!-- display the business status (shop open or closed) and the distance from user location to business destination -->
         <div class="col-md-7 order-md-1">
-          <h3 id="business-status">${(details.is_closed) ? `<span class="text-danger">Closed</span>` : `<span class="text-success">Open</span>`} -
+          <h3 id="business-status">${(details.hours[0].is_open_now) ? `<span class="text-success">Open now</span>` : `<span class="text-danger">Closed now</span>`} -
             <span class="text-muted">${localStorage.getItem("distance")} mi</span>
             <span class="glyphicon glyphicon-map-marker"></span>
           </h3>
