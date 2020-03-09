@@ -27,38 +27,41 @@ This web application functions as an information service to good restaurants nea
 
 With Geolocation: 
 
-
+![](acceptlocation.gif)
 
 Without Geolocation:
 
-
+![](blocklocation.gif)
 
 ## Features
 * #### Default search
 Users can get started by searching for nearby restaurants from a small number of **popular** categories compiled by Yelp Fusion API
 
-
+![](default-search.gif)
 
 * ### Preset categories and cuisines search
 Users can select given preset options on the navigation bar to get them started on some search terms. Yelp API endpoint queries are made based on the category or cuisine selected and will return the appropriate results.
 
-
+![](preset-search.gif)
 
 * ### Search using keyword terms
 Users get more freedom to search using broad or narrow terms, for example "food", "restaurants", "spicy food" or "cheap", etc. Go crazy with the terms! The terms are saved as keywords to be inserted into the Yelp API endpoint for query and a compiled list of results will be returned.
 
+![](keyword-search.gif)
 
+Navigate through results:
+
+![](buttons.gif)
 
 * ### Detailed page
 Need to see when they are open until? Or where they are? Users can view more details of the particular restaurant. A Yelp API call is made to return more details of a particular restaurant business given their unique id. Leaflet JS and MapTiler were also used to display the location of the restaurant on an interactive map.
 
-
+![](details.gif)
 
 * ### Related search terms
-
 Interested in a particular category after viewing a restaurant? Users can click the category next to the business name to look up more restaurants under that category!
 
-
+![](related-search.gif)
 
 *The list of search results was compiled by calling the Yelp Fusion API based on their 'keyword terms'. As such, hard coding was not an issue, but rather html templates were coded for data to simply fill in.*
 
