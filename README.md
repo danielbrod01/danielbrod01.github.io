@@ -22,10 +22,31 @@ This web application functions as an information service to good restaurants nea
 *Note: The Yelp Fusion API key used in my js files are mine, but I am not familiar with using environment variables so do let me know if you have an idea as to how. Otherwise if cloning this repo and choosing to run it locally, you must register for an API key <a href="https://www.yelp.com/fusion">here</a>.*
 
 # Build
-#### Features
-##### Preset categories and cuisines search
-* Users can select given preset options on the navigation bar to get them started on some search terms. 
+### Features
+* #### Default search
+Users can get started by searching for nearby restaurants from a small number of **popular** categories compiled by Yelp Fusion API
 
-![](
+![](default-search.gif)
 
-The list of search results was compiled by calling the Yelp Fusion API based on their 'keyword terms'. As such, hard coding was not an issue, but rather templates were provided for data to fill in.
+* ### Preset categories and cuisines search
+Users can select given preset options on the navigation bar to get them started on some search terms. 
+
+![](preset-search.gif)
+
+* ### Search using keyword terms
+Users get more freedom to search using broad or narrow terms, for example "food", "restaurants", "spicy food" or "cheap", etc. Go crazy with the terms!
+
+![](search-keyword.gif)
+
+* ### Detailed page
+Need to see when they are open until? Or where they are? Users can view more details of the particular restaurant. 
+
+![](details.gif)
+
+* ### Related search terms
+
+Interested in a particular category after viewing a restaurant? Users can click the category next to the business name to look up more restaurants under that category!
+
+![](related-search.gif)
+
+*The list of search results was compiled by calling the Yelp Fusion API based on their 'keyword terms'. As such, hard coding was not an issue, but rather html templates were coded for data to simply fill in.*
