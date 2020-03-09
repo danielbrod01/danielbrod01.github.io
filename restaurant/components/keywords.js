@@ -9,12 +9,36 @@ function detectEnterKey(event) {
  function submitSearchForm() {
    var key = document.getElementById("form-text").value;
    localStorage.setItem("keyword",key);
+   var num = 0;
+   localStorage.setItem("offset", num);
    window.document.location = '../restaurant/results.html';
  }
 
 //Function to save keyword into local storage
  function submitKeyword(key) {
    localStorage.setItem("keyword",key);
+   var num = 0;
+   localStorage.setItem("offset", num);
+   window.document.location = '../restaurant/results.html';
+ }
+
+//set the offset to offset+25 for next api query
+ function nextResults() {
+   var num = parseInt(localStorage.getItem("offset"));
+   num += 25;
+   localStorage.setItem("offset", num);
+   window.document.location = '../restaurant/results.html';
+ }
+
+//set the offset to offset-25 for the next api query
+ function prevResults() {
+   var num = parseInt(localStorage.getItem("offset"));
+   if(num < 25) {
+     document.getElementById("result-title").innerHTML = `There are no more results before that`;
+     return;
+   }
+   num -= 25;
+   localStorage.setItem("offset", num);
    window.document.location = '../restaurant/results.html';
  }
 

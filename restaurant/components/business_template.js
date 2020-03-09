@@ -79,13 +79,35 @@ function businessDetailsTemplate(details) {
   `
 }
 
-//helpfer function to create html elements to display business images
+//helper function to create html elements to display business images
 function businessPhotosTemplate(photo) {
   return `
   <div class="col">
     <img src="${photo}" height="250" width="350">
   </div>
   `
+}
+
+//function to check if current offset is 0-24 (page 1 of results), only display the next button. else display both prev and next button
+function displayOffsetButtons() {
+  if (localStorage.getItem("offset") < 25) {
+    document.getElementById("prev-next-buttons").innerHTML = `<button onclick="nextResults()" id="next-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Next</button>`;
+  }
+  else {
+    document.getElementById("prev-next-buttons").innerHTML = `<button onclick="prevResults()" id="prev-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Prev</button>
+    <button onclick="nextResults()" id="next-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Next</button>`;
+  }
+}
+
+//function to check if current offset is 0-24 (page 1 of results), only display the next button. else display both prev and next button
+function fixOffsetButtons() {
+  if (localStorage.getItem("offset") < 25) {
+    return `<button onclick="nextResults()" id="next-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Next</button>`;
+  }
+  else {
+    return `<button onclick="prevResults()" id="prev-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Prev</button>
+    <button onclick="nextResults()" id="next-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Next</button>`;
+  }
 }
 
 function priceRange(price) {
