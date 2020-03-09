@@ -49,7 +49,7 @@ Users get more freedom to search using broad or narrow terms, for example "food"
 
 ![](keyword-search.gif)
 
-**Navigate through results:**
+**Navigate through results using prev and next buttons:**
 
 ![](buttons.gif)
 
