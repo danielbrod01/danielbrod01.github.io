@@ -98,13 +98,24 @@
             <button onclick="submitSearchForm()" id="submit-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Search</button>
           </form>
           <li>
-            <a class="nav-button" href="https://github.com/danielbrod01/danielbrod01.github.io">
+            <a class="nav-button" href="https://github.com/danielbrod01">
             <span class="glyphicon glyphicon-user"></span> GitHub</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+<!-- set the results offset to 0 (0-24 results displayed) if coming from a new query (not through previous or next page buttons)-->
+    <script>
+      if (localStorage.getItem("offset") != null) {
+        console.log("offset: " + localStorage.getItem("offset"));
+      }
+      else {
+        var num = 0;
+        localStorage.setItem("offset", num);
+      }
+    </script>
 
 <!-- Helper functions to store user input for api query -->
     <script src="components/keywords.js"></script>
@@ -118,10 +129,18 @@
     <div class="container text-center mb-3 bg-light rounded border">
       <div id="result-count">
         <h1 id="result-title" class="city">Retrieving results...</h1>
+    <!-- Include previous and next page buttons-->
+        <div id="prev-next-buttons">
+          <button onclick="prevResults()" id="prev-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Prev</button>
+          <button onclick="nextResults()" id="next-button" type="button" class="search-button btn"><span class="glyphicon glyphicon-search"></span> Next</button>
+        </div>
       </div>
     </div>
       <div id="result-list" class="container mb-3 bg-light rounded border"></div>
     <hr class="result-divider">
+
+    <!-- display next button if we are at the page 1 of results (0-24 results offset)-->
+    <script>displayOffsetButtons()</script>
 
   <!-- **************************** Footer ****************************** -->
   <footer class="footer nav-footer-bg-colors pt-2 pd-2">
