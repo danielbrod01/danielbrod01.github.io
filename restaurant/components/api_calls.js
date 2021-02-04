@@ -10,7 +10,7 @@ function getBusinessesNearby() {
   var offset = localStorage.getItem("offset");
 
   var URL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3';
-  var API_KEY = 'IbVMdDeWsBdkD1Zi-us7VhQuMVCVFjVE5sAlkCRZNogfel6CIerA-TwIcN0VRiyWD2CbDuzIyPYMj-6D4R1CXo7MbfoJ3NXOoimwo4EF5QKEFpuKS5dTKiHXOxNfXnYx';
+  var API_KEY = 'YzNwfdKcVRVErldADc_wITEC2yfmxQAooA5ZNO-x8uKvcZYpyvgRL3epBrM3-1WDLqkYj887sHYBoaT0h7HnCbOJhOwFcJ5PpAmwKwG4nXtPZfps0O2Yj3NxUD4bYHYx';
 
   //fetch data using the api endpoint
   var auth = {
@@ -40,7 +40,7 @@ function getBusinesses() {
   var offset = localStorage.getItem("offset");
 
   var URL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3';
-  var API_KEY = 'IbVMdDeWsBdkD1Zi-us7VhQuMVCVFjVE5sAlkCRZNogfel6CIerA-TwIcN0VRiyWD2CbDuzIyPYMj-6D4R1CXo7MbfoJ3NXOoimwo4EF5QKEFpuKS5dTKiHXOxNfXnYx';
+  var API_KEY = 'YzNwfdKcVRVErldADc_wITEC2yfmxQAooA5ZNO-x8uKvcZYpyvgRL3epBrM3-1WDLqkYj887sHYBoaT0h7HnCbOJhOwFcJ5PpAmwKwG4nXtPZfps0O2Yj3NxUD4bYHYx';
 
   //fetch data using the api endpoint
   var auth = {
@@ -70,7 +70,7 @@ function getBusinessDetails() {
   var id = localStorage.getItem("business-id");
 
   var URL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3';
-  var API_KEY = 'IbVMdDeWsBdkD1Zi-us7VhQuMVCVFjVE5sAlkCRZNogfel6CIerA-TwIcN0VRiyWD2CbDuzIyPYMj-6D4R1CXo7MbfoJ3NXOoimwo4EF5QKEFpuKS5dTKiHXOxNfXnYx';
+  var API_KEY = 'YzNwfdKcVRVErldADc_wITEC2yfmxQAooA5ZNO-x8uKvcZYpyvgRL3epBrM3-1WDLqkYj887sHYBoaT0h7HnCbOJhOwFcJ5PpAmwKwG4nXtPZfps0O2Yj3NxUD4bYHYx';
 
   //fetch data using business id in the api endpoint
   var auth = {
