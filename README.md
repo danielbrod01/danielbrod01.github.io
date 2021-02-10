@@ -1,8 +1,8 @@
 # Capital One Software Engineering Summit MindSumo Challenge 2020
-<a href="https://danielbrod01.github.io/capital-one-summit-2020-challenge/restaurant/index.html">My Web Application Submission</a>
+<a href="https://danielbrod01.github.io/restaurant/index.html">My Web Application Submission</a>
 for the final round of the application for Capital One's Software Engineering Summit. JavaScript/jQuery web app that allows you to decide good restaurants around them.
 
-Website: https://danielbrod01.github.io/capital-one-summit-2020-challenge/restaurant/index.html
+Website: https://danielbrod01.github.io/restaurant/index.html
 
 The web app is not supported well on mobile devices. Request to see "Desktop Site" on the browser as it will provide a better user experience. 
 
